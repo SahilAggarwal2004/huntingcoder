@@ -10,9 +10,18 @@
     align-items: center;
 }
 
-.blogs {}
+.blogs {
+    text-align: center;
+    width: 50%;
+}
 
-.blogItem {}
+.blogItem h3 {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+.blogItem p {
+    margin-top: 0;
+}
 
 .link {
     cursor: pointer;

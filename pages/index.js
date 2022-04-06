@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image' // removed due to SSG
 import Dummy from '../components/Dummy'
 import styles from '../styles/Home.module.css'
 
@@ -29,7 +29,8 @@ export default function Home() {
           <span className='mySpan dummy'>Hunting Coder</span>
           {/* We imported Dummy component above which contains a dummy class in styled jsx. But we still couldn't apply the dummy class css for this span if we haven't given the global attribute to Dummy's styled jsx */}
         </h1>
-        <Image src='/home.jpg' width={273} height={158} />
+        {/* <Image src='/home.jpg' width={273} height={158} /> */}
+        <img src='/home.jpg' width={273} height={158} alt="" />
         <p className={styles.description}>A blog for hunting coders by a hunting coder!</p>
 
         <div className={styles.blogs}>
