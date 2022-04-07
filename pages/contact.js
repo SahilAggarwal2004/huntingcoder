@@ -33,7 +33,7 @@ export default function contact() {
           </div>
           <div className={styles.item}>
             <label htmlFor="mobile">Mobile No.</label>
-            <input type="text" id="mobile" minLength={10} maxLength={10} placeholder="0000000000" />
+            <input type="tel" id="mobile" minLength={10} maxLength={10} placeholder="Enter your phone number" />
           </div>
           <div className={styles.item}>
             <label htmlFor="description">Concern</label>

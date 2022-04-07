@@ -7,5 +7,5 @@ export default async function contact(req, res) {
     // writeFile(path, data, callback)
     if (!req.body.email) return res.status(400).json({ msg: "Please provide email" })
     await fs.promises.writeFile(`contactdata/${req.body.email}.json`, JSON.stringify(req.body))
-    res.status(200).json({ msg: "Succesfully submitted your response!" })
+    res.status(200).json({ msg: "Thanks for contacting us! Your response has been submitted." })
 }
