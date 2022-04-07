@@ -39,6 +39,7 @@
     width: 100%;
     padding-left: 5px;
     display: block;
+    font-family: cursive;
 }
 
 @media screen and (max-width: 600px) {
