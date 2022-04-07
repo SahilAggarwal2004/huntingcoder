@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/Contact.module.css'
 
 export default function contact() {
@@ -39,7 +39,7 @@ export default function contact() {
             <label htmlFor="description">Concern</label>
             <textarea rows={5} cols={30} id="description" placeholder="Elaborate your concern" />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

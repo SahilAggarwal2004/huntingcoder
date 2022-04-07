@@ -8,7 +8,7 @@ export default function slug(props) {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
-                <h1>{blog.title}</h1>
+                <h2>{blog.title}</h2>
                 <hr />
                 {/* Let's assume that blog.content is html string(like "<div>div</div><p>para</p>") instead of plain string to make our blog look good. In that case if we pass the content as below, react will treat html string as plain string only for security issues. Since we know that our html is safe, we will use a react's feature dangerouslySetInnerHTML which will be passed as an attribute and will take a js object as value with __html as key and html string as value */}
                 {/* <div>{blog.content}</div> */}

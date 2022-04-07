@@ -1,6 +1,7 @@
 import Head from 'next/head'
-// import Image from 'next/image' // removed due to SSG
-import Dummy from '../components/Dummy'
+import Image from 'next/image' // remove when using SSG
+import Link from 'next/link'
+// import Dummy from '../components/Dummy'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -14,42 +15,48 @@ export default function Home() {
       </Head>
       {/* Another way to write css inside a component is to write styled jsx as below */}
       {/* <style jsx>{`styles`}</style> */}
-      <style jsx>
+      {/* <style jsx>
         { // Here we can write css as normally we do
           `
         .mySpan {
           color: red;
         }
         `}
-      </style>
+      </style> */}
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           {/* mySpan class styled inside styled jsx above */}
-          <span className='mySpan dummy'>Hunting Coder</span>
+          <span className='mySpan dummy'>{'<HuntingCoder/>'}</span>
           {/* We imported Dummy component above which contains a dummy class in styled jsx. But we still couldn't apply the dummy class css for this span if we haven't given the global attribute to Dummy's styled jsx */}
         </h1>
-        {/* <Image src='/home.jpg' width={273} height={158} /> */}
-        <img src='/home.jpg' width={273} height={158} alt="" />
+        <Image className={styles.img} src='/home.jpg' width={273} height={158} quality={100} />
+        {/* <img src='/home.jpg' width={273} height={158} alt="" /> */}
         <p className={styles.description}>A blog for hunting coders by a hunting coder!</p>
 
         <div className={styles.blogs}>
           <h2>Popular Blogs</h2>
-          <div>
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language to design logic for the web</p>
+          <div className={styles.blogItem}>
+            <Link href={`/blogpost/learn-flask`}>
+              <h3 className={styles.link}>How to learn Flask</h3>
+            </Link>
+            <p>Flask is a micro web framework written in Python.</p>
           </div>
-          <div>
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language to design logic for the web</p>
+          <div className={styles.blogItem}>
+            <Link href={`/blogpost/learn-flask`}>
+              <h3 className={styles.link}>How to learn JavaScript</h3>
+            </Link>
+            <p>JavaScript is the language to design logic for the web.</p>
           </div>
-          <div>
-            <h3>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language to design logic for the web</p>
+          <div className={styles.blogItem}>
+            <Link href={`/blogpost/learn-nextjs`}>
+              <h3 className={styles.link}>How to learn NextJS</h3>
+            </Link>
+            <p>Next.js is an open-source web development framework built on top of Node.js enabling React based web applications.</p>
           </div>
         </div>
       </main>
-      <Dummy />
+      {/* <Dummy /> */}
     </div>
   )
 }

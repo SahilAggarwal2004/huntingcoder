@@ -7,18 +7,21 @@ export default function blogs(props) {
   const blog = props.blogs
 
   return (
-    <main className={styles.main}>
-      <div className={styles.blogs}>
-        {blog.map(element => {
-          return <div className={styles.blogItem} key={element.name}>
-            <Link href={`/blogpost/${element.name}`}>
-              <h3 className={styles.link}>{element.title}</h3>
-            </Link>
-            <p>{element.short}</p>
-          </div>
-        })}
-      </div>
-    </main>
+    <div className={styles.container}>
+      <main className={styles.main}>
+        <h2>All Blogs</h2>
+        <div className={styles.blogs}>
+          {blog.map(element => {
+            return <div className={styles.blogItem} key={element.name}>
+              <Link href={`/blogpost/${element.name}`}>
+                <h3 className={styles.link}>{element.title}</h3>
+              </Link>
+              <p>{element.short}</p>
+            </div>
+          })}
+        </div>
+      </main>
+    </div>
   )
 }
 

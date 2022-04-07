@@ -1,12 +1,22 @@
+.nav {
+    background-color: black;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 .nav ul {
     display: flex;
     justify-content: center;
     padding: 0;
+    margin: 0;
 }
 
 .nav ul a {
     /* since next/link is at the end uses anchor tag only, we will style 'Link' using 'a' selector */
-    margin: 1rem;
+    margin: 1rem 2vw;
     cursor: pointer;
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
