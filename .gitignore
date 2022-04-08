@@ -31,5 +31,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-#contact
+#fs
+/blogdata
 /contactdata
