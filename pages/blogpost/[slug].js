@@ -23,7 +23,7 @@ export default function slug(props) {
 // getServerSideProps() is used for SSR. In SSR, the connection of client to server doesn't break after serving the files. So, any update in the server will be reflected on load.
 export async function getServerSideProps(context) {
     const { slug } = context.query // we were using next/router above in CSR to find out the query but this function has a context parameter which is an object which contains almost all the info about the network. So we can access our slug from here.
-    const response = await fetch(`http://localhost:3000/api/fetchblog?slug=${slug}`);
+    const response = await fetch(`${process.env.API}fetchblog?slug=${slug}`);
     const blog = await response.json();
     return {
         props: { blog },

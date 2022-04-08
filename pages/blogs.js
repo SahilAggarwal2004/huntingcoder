@@ -29,7 +29,7 @@ export default function blogs(props) {
 export async function getServerSideProps(context) {
   // Now instead of fetching blogs in client side, we will fetch them in this function from server.
   // fetch('/api/fetchall').then(res => { return res.json() }).then(data => setBlog(data))
-  const response = await fetch('http://localhost:3000/api/fetchall'); // But while using fetch inside server, we must pass absolute urls
+  const response = await fetch(`${process.env.API}fetchall`); // But while using fetch inside server, we must pass absolute urls
   const blogs = await response.json();
   return {
     props: { blogs }, // this will be directly accessible from blog component as props. 1st functional parameter is always props, so it can be named anything. But here, it can only be named props

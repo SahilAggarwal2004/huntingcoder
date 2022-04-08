@@ -9,7 +9,7 @@ export default function contact() {
     const email = document.getElementById('email').value
     const mobile = document.getElementById('mobile').value
     const description = document.getElementById('description').value
-    const response = await fetch('http://localhost:3000/api/contact', {
+    const response = await fetch(`${process.env.API}contact`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, mobile, description })
