@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from '../styles/Contact.module.css'
 
-export default function contact() {
-
+export default function contact(props) {
   async function postcontact(event) {
     event.preventDefault()
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const mobile = document.getElementById('mobile').value
     const description = document.getElementById('description').value
-    const response = await fetch(`${process.env.API}contact`, {
+    const response = await fetch(`${props.API}contact`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, mobile, description })
@@ -44,4 +43,8 @@ export default function contact() {
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  return { props: { API: process.env.API } }
 }

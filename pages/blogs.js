@@ -26,7 +26,7 @@ export default function blogs(props) {
 }
 
 // getServerSideProps is a function that executes on the server side and returns us some props as an object with only props key(no more extra key can be returned) whose keys will be directly accessible from the client side component
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   // Now instead of fetching blogs in client side, we will fetch them in this function from server.
   // fetch('/api/fetchall').then(res => { return res.json() }).then(data => setBlog(data))
   const response = await fetch(`${process.env.API}fetchall`); // But while using fetch inside server, we must pass absolute urls
