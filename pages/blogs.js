@@ -13,7 +13,7 @@ export default function blogs(props) {
         <div className={styles.blogs}>
           {blog.map(element => {
             return <div className={styles.blogItem} key={element.name}>
-              <Link href={`/blogpost/${element.name}`}>
+              <Link passHref href={`/blogpost/${element.name}`}>
                 <h3 className={styles.link}>{element.title}</h3>
               </Link>
               <p>{element.short}</p>
